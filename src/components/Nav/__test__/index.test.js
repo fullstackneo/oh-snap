@@ -7,12 +7,13 @@ afterEach(cleanup);
 describe('Nav component', () => {
   // baseline test
   it('renders', () => {
+    // Jest creates a simulated DOM in a Node.js environment to approximate the DOM (no component is actually visibly rendered).
     render(<Nav />);
   });
   // snapshot test
-  it('matches snapshot', () => {
+  it('matches snapshot DOM node structure', () => {
     // render Nav
-    // the asFragment function, which returns a snapshot of the About component
+    // the asFragment function, which returns a snapshot of the Nav component
     const { asFragment } = render(<Nav />);
     // assert value comparison
     expect(asFragment()).toMatchSnapshot();

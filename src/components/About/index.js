@@ -1,8 +1,24 @@
+// import React, { useState } from 'react';
 import React from 'react';
 import coverImage from '../../assets/cover/cover-image.jpg';
+
 function About() {
+  // const [seconds, setSeconds] = useState(0);
+
+  // function startStopwatch() {
+  //   // let updatedSeconds = seconds;
+   
+  //     // updatedSeconds += 1;
+  //     // console.log(updatedSeconds);
+  //     setSeconds(old=>old+1);
+  
+  // }
   return (
     <section className="my-5">
+      {/* <div>
+        {seconds}
+        <button onClick={startStopwatch}>Start</button>
+      </div> */}
       <h1 id="about">Who am I?</h1>
       <img src={coverImage} className="my-2" style={{ width: '100%' }} alt="cover" />
       <div className="my-2">

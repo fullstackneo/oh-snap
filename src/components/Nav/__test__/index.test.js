@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Nav from '..';
+
+const categories = [{ name: 'portraits', description: 'Portraits of people in my life' }];
+const [mockCurrentCategory, mockSetCurrentCategory] = useState(categories[0]);
 afterEach(cleanup);
 
 describe('Nav component', () => {
   // baseline test
   it('renders', () => {
     // Jest creates a simulated DOM in a Node.js environment to approximate the DOM (no component is actually visibly rendered).
-    render(<Nav />);
+    render(<Nav categories={categories} setCurrentCategory={mockSetCurrentCategory} currentCategory={mockCurrentCategory} />);
   });
   // snapshot test
   it('matches snapshot DOM node structure', () => {
     // render Nav
     // the asFragment function, which returns a snapshot of the Nav component
-    const { asFragment } = render(<Nav />);
+    const { asFragment } = render(<Nav categories={categories} setCurrentCategory={mockSetCurrentCategory} currentCategory={mockCurrentCategory} />);
     // assert value comparison
     expect(asFragment()).toMatchSnapshot();
   });
